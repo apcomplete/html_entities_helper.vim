@@ -22,8 +22,8 @@ function! g:encode_unicode()
   let _s=@/
   let l = line(".")
   let c = col(".")
-  s/"/\&quot;/egi
   s/&/\&amp;/egi
+  s/"/\&quot;/egi
   s/'/\&apos;/egi
   s/</\&lt;/egi
   s/>/\&gt;/egi
