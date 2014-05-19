@@ -17,7 +17,7 @@ let g:loaded_html_entities_helper = 1
 " List from: -
 " http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 " TODO: make work on a selection
-function! g:encode_unicode()
+function! g:Encode_unicode()
   " Preparation: save last search, and cursor position.
   let _s=@/
   let l = line(".")
@@ -279,7 +279,7 @@ endfunction
 " List from: -
 " http://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
 " TODO: make work on a selection
-function! g:named_to_codepoint()
+function! g:Named_to_codepoint()
   " Preparation: save last search, and cursor position.
   let _s=@/
   let l = line(".")
@@ -539,8 +539,8 @@ function! g:named_to_codepoint()
 endfunction
 
 " Encode unicode characters in current buffer to HTML Entities
-vnoremap <silent> <leader>He :call g:encode_unicode()<CR>
-vnoremap <silent> <leader>Hn :call g:named_to_code()<CR>
-nnoremap <silent> <leader>He ggVG :call g:encode_unicode()<CR>
+vnoremap <silent> <leader>He :call g:Encode_unicode()<CR>
+vnoremap <silent> <leader>Hn :call g:Named_to_codepoint()<CR>
+nnoremap <silent> <leader>He ggVG :call g:Encode_unicode()<CR>
 " Convert all named HTML Entities in current buffer to numerical code point
-nnoremap <silent> <leader>Hn ggVG :call g:named_to_codepoint()<CR>
+nnoremap <silent> <leader>Hn ggVG :call g:Named_to_codepoint()<CR>
